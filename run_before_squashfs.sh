@@ -102,10 +102,6 @@ cp -af "/home/liveuser/"{".bashrc",".bash_profile"} "/etc/skel/"
 mv "/usr/lib/modprobe.d/nvidia-utils.conf" "/etc/calamares/files/nv-modprobe"
 mv "/usr/lib/modules-load.d/nvidia-utils.conf" "/etc/calamares/files/nv-modules-load"
 
-# Get extra drivers!
-mkdir "/opt/extra-drivers"
-sudo pacman -Sw --noconfirm --cachedir "/opt/extra-drivers" r8168
-
 # Clean pacman log
 rm "/var/log/pacman.log"
 
