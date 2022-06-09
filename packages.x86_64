@@ -12,9 +12,9 @@ diffutils
 edk2-shell
 inetutils
 less
-linux-lts
+linux-zen
 linux-firmware
-linux-lts-headers
+linux-zen-headers
 logrotate
 man-db
 man-pages
@@ -210,55 +210,47 @@ tldr
 duf
 inxi
 
-
 # DESKTOP
 
 ## Display manager
 accountsservice
-lightdm-slick-greeter
-eos-lightdm-slick-theme
+lightdm-webkit2-greeter
 
 ## Desktop environment
-endeavouros-skel-xfce4
 libwnck3
 network-manager-applet
-thunar-archive-plugin
-thunar-media-tags-plugin
-xfce4
-xfce4-battery-plugin
-xfce4-datetime-plugin
-xfce4-mount-plugin
-xfce4-netload-plugin
-xfce4-notifyd
-xfce4-pulseaudio-plugin
-xfce4-screensaver
-xfce4-screenshooter
-xfce4-taskmanager
-xfce4-wavelan-plugin
-xfce4-weather-plugin
-xfce4-whiskermenu-plugin
-xfce4-xkb-plugin
+pcmanfm
+i3-gaps
+polybar
+rofi
+gnome-system-monitor
+nitrogen
+flameshot
 
 ## Editor
-xed
-vim
+neovim
 
 ## Archive
 file-roller
 
 ## Image viewer
-ristretto
+feh
 
 ## Video player
-parole
+vlc
+
+## Music
+spotify
 
 ## Browser
 firefox
 
 ## System
 galculator
-meld
 neofetch
+
+## Obs Virtual Cam Feature
+v4l2loopback-dkms
 
 ## Fonts
 adobe-source-han-sans-cn-fonts
@@ -270,7 +262,7 @@ ttf-bitstream-vera
 ttf-dejavu
 ttf-liberation
 ttf-opensans
-
+ttf-iosevka-nerd
 
 # CALAMARES
 
@@ -309,25 +301,11 @@ yaml-cpp
 
 ## General
 
-arc-gtk-theme-eos
 ckbcomp
-endeavouros-theming
-endeavouros-xfce4-terminal-colors
-eos-apps-info
-eos-hooks
-eos-log-tool
-eos-packagelist
-eos-quickstart
-eos-qogir-icons
-eos-rankmirrors
-eos-update-notifier
-grub2-theme-endeavouros
 mkinitcpio-openswap
 nvidia-installer-dkms
 rate-mirrors
 reflector-simple
-welcome
-yad-eos
 yay
 
 ## Calamares EndeavourOS
