@@ -93,7 +93,7 @@ rm -rf "/usr/share/backgrounds/xfce/xfce-verticals.png"
 ln -s "/usr/share/endeavouros/backgrounds/endeavouros-wallpaper.png" "/usr/share/backgrounds/xfce/xfce-verticals.png"
 
 # LightDM Theme
-sudo sed -i 's/^greeter-session=.*$/greeter-session=lightdm-webkit2-greeter/' /etc/lightdm/lightdm.conf
+sudo sed -i 's/^#greeter-session=.*$/greeter-session=lightdm-webkit2-greeter/' /etc/lightdm/lightdm.conf
 sudo sed -i 's/^webkit_theme        = .*$/webkit_theme        = litarvan/' /etc/lightdm/lightdm-webkit2-greeter.conf
 
 # LightDM Service
