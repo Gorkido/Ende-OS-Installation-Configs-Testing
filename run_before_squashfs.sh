@@ -92,6 +92,9 @@ chmod 644 "/usr/share/endeavouros/backgrounds/"*".png"
 rm -rf "/usr/share/backgrounds/xfce/xfce-verticals.png"
 ln -s "/usr/share/endeavouros/backgrounds/endeavouros-wallpaper.png" "/usr/share/backgrounds/xfce/xfce-verticals.png"
 
+# LightDM Theme
+sudo sed -i 's/^greeter-session=.*$/greeter-session=lightdm-webkit2-greeter/' /etc/lightdm/lightdm.conf
+sudo sed -i 's/^webkit_theme        = .*$/webkit_theme        = litarvan/' /etc/lightdm/lightdm-webkit2-greeter.conf
 
 # TEMPORARY CUSTOM FIXES
 
@@ -104,6 +107,11 @@ mv "/usr/lib/modules-load.d/nvidia-utils.conf" "/etc/calamares/files/nv-modules-
 
 # Clean pacman log
 rm "/var/log/pacman.log"
+
+sudo pacman -Sc --noconfirm
+sudo pacman -Scc --noconfirm
+yay -Sc --noconfirm
+yay -Scc --noconfirm
 
 echo "############################"
 echo "# end chrooted commandlist #"

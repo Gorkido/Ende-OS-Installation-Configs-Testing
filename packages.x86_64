@@ -215,6 +215,7 @@ inxi
 ## Display manager
 accountsservice
 lightdm-webkit2-greeter
+lightdm-webkit-theme-litarvan
 
 ## Desktop environment
 libwnck3
