@@ -1,7 +1,6 @@
 # BASE
 
 ## Base system
-iptables-nft
 base
 base-devel
 archlinux-keyring
@@ -13,9 +12,9 @@ diffutils
 edk2-shell
 inetutils
 less
-linux
+linux-lts
 linux-firmware
-linux-headers
+linux-lts-headers
 logrotate
 man-db
 man-pages
@@ -32,6 +31,7 @@ sysfsutils
 systemd-sysvcompat
 texinfo
 which
+zsh
 
 ## Filesystem
 btrfs-progs
@@ -112,31 +112,26 @@ paprefs
 pavucontrol
 pipewire-alsa
 pipewire-jack
+pipewire-media-session
 pipewire-pulse
-rtkit
 sof-firmware
-wireplumber
 
 
 # SOFTWARE
 
 ## General system
-bash-completion
 dialog
 dmraid
-downgrade
-duf
+expect
 fakeroot
 freetype2
 git
-glances
-python-packaging
+gpart
 gpm
 gptfdisk
 haveged
 hwdetect
 hwinfo
-inxi
 libgsf
 libopenraw
 mlocate
@@ -147,8 +142,6 @@ poppler-glib
 power-profiles-daemon
 rebuild-detector
 reflector
-rsync
-tldr
 unrar
 unzip
 wget
@@ -185,16 +178,14 @@ wireless_tools
 wpa_supplicant
 xl2tpd
 
-## Bluetooth
+# Bluetooth
 bluez
 bluez-utils
 blueberry
 
-## Firewall
-firewalld
+# Firewall
 python-pyqt5
 python-capng
-
 
 # ISO
 
@@ -206,11 +197,18 @@ pv
 syslinux
 
 ## Live iso tools
-clonezilla
-gpart
 gparted
 grsync
+clonezilla
 hdparm
+fsarchiver
+python-defusedxml
+python-packaging
+bash-completion
+downgrade
+tldr
+duf
+inxi
 
 
 # DESKTOP
@@ -221,9 +219,11 @@ lightdm-slick-greeter
 eos-lightdm-slick-theme
 
 ## Desktop environment
+endeavouros-skel-xfce4
 libwnck3
 network-manager-applet
-pcmanfm
+thunar-archive-plugin
+thunar-media-tags-plugin
 xfce4
 xfce4-battery-plugin
 xfce4-datetime-plugin
@@ -241,16 +241,16 @@ xfce4-xkb-plugin
 
 ## Editor
 xed
-neovim
+vim
 
 ## Archive
 file-roller
 
 ## Image viewer
-feh
+ristretto
 
 ## Video player
-vlc
+parole
 
 ## Browser
 firefox
@@ -272,34 +272,68 @@ ttf-liberation
 ttf-opensans
 
 
+# CALAMARES
+
+## Calamares
+boost-libs
+cmake
+dmidecode
+doxygen
+extra-cmake-modules
+kconfig
+kcoreaddons
+ki18n
+kparts
+kpmcore
+kservice
+kvantum
+kwidgetsaddons
+libpwquality
+lsb-release
+parted
+polkit-qt5
+python
+qt5-svg
+qt5-tools
+qt5-webengine
+qt5-xmlpatterns
+qt5ct
+solid
+squashfs-tools
+tcpdump
+upower
+yaml-cpp
+
+
 # ENDEAVOUROS REPO
 
 ## General
+
 arc-gtk-theme-eos
+ckbcomp
 endeavouros-theming
 endeavouros-xfce4-terminal-colors
 eos-apps-info
-#eos-hooks
+eos-hooks
 eos-log-tool
 eos-packagelist
 eos-quickstart
 eos-qogir-icons
 eos-rankmirrors
-#eos-update-notifier
+eos-update-notifier
 grub2-theme-endeavouros
+mkinitcpio-openswap
 nvidia-installer-dkms
 rate-mirrors
 reflector-simple
 welcome
+yad-eos
 yay
 
 ## Calamares EndeavourOS
 calamares_config_ce
 calamares_config_default
 calamares_current
-ckbcomp
-kvantum
-qt5ct
 
 
 # VM SUPPORT
@@ -317,3 +351,6 @@ virtualbox-guest-utils
 open-vm-tools
 xf86-input-vmmouse
 xf86-video-vmware
+
+# Optimizations
+irqbalance
