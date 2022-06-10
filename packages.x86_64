@@ -1,6 +1,7 @@
 # BASE
 
 ## Base system
+iptables-nft
 base
 base-devel
 archlinux-keyring
@@ -31,6 +32,7 @@ sysfsutils
 systemd-sysvcompat
 texinfo
 which
+vi
 zsh
 
 ## Filesystem
@@ -112,26 +114,31 @@ paprefs
 pavucontrol
 pipewire-alsa
 pipewire-jack
-pipewire-media-session
 pipewire-pulse
+rtkit
 sof-firmware
+wireplumber
 
 
 # SOFTWARE
 
 ## General system
+bash-completion
 dialog
 dmraid
-expect
+downgrade
+duf
 fakeroot
 freetype2
 git
-gpart
+glances
+python-packaging
 gpm
 gptfdisk
 haveged
 hwdetect
 hwinfo
+inxi
 libgsf
 libopenraw
 mlocate
@@ -142,6 +149,8 @@ poppler-glib
 power-profiles-daemon
 rebuild-detector
 reflector
+rsync
+tldr
 unrar
 unzip
 wget
@@ -178,14 +187,16 @@ wireless_tools
 wpa_supplicant
 xl2tpd
 
-# Bluetooth
+## Bluetooth
 bluez
 bluez-utils
 blueberry
 
-# Firewall
+## Firewall
+firewalld
 python-pyqt5
 python-capng
+
 
 # ISO
 
@@ -197,18 +208,12 @@ pv
 syslinux
 
 ## Live iso tools
+clonezilla
+gpart
 gparted
 grsync
-clonezilla
 hdparm
-fsarchiver
-python-defusedxml
-python-packaging
-bash-completion
-downgrade
-tldr
-duf
-inxi
+
 
 # DESKTOP
 
@@ -220,13 +225,14 @@ lightdm-webkit-theme-litarvan
 ## Desktop environment
 libwnck3
 network-manager-applet
-pcmanfm
 i3-gaps
+pcmanfm
 polybar
 rofi
-gnome-system-monitor
 nitrogen
 flameshot
+gnome-system-monitor
+kitty
 
 ## Editor
 neovim
@@ -249,6 +255,7 @@ firefox
 
 ## System
 galculator
+meld
 neofetch
 
 ## Obs Virtual Cam Feature
@@ -266,54 +273,30 @@ ttf-liberation
 ttf-opensans
 ttf-iosevka-nerd
 
-# CALAMARES
-
-## Calamares
-boost-libs
-cmake
-dmidecode
-doxygen
-extra-cmake-modules
-kconfig
-kcoreaddons
-ki18n
-kparts
-kpmcore
-kservice
-kvantum
-kwidgetsaddons
-libpwquality
-lsb-release
-parted
-polkit-qt5
-python
-qt5-svg
-qt5-tools
-qt5-webengine
-qt5-xmlpatterns
-qt5ct
-solid
-squashfs-tools
-tcpdump
-upower
-yaml-cpp
-
-
 # ENDEAVOUROS REPO
 
 ## General
-
-ckbcomp
-mkinitcpio-openswap
+eos-apps-info
+eos-hooks
+eos-log-tool
+eos-packagelist
+eos-quickstart
+eos-qogir-icons
+eos-rankmirrors
+eos-update-notifier
 nvidia-installer-dkms
 rate-mirrors
 reflector-simple
+yad-eos
 yay
 
 ## Calamares EndeavourOS
 calamares_config_ce
 calamares_config_default
 calamares_current
+ckbcomp
+kvantum
+qt5ct
 
 
 # VM SUPPORT
