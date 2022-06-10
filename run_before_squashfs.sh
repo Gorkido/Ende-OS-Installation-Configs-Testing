@@ -93,14 +93,13 @@ rm -rf "/usr/share/backgrounds/xfce/xfce-verticals.png"
 ln -s "/usr/share/endeavouros/backgrounds/endeavouros-wallpaper.png" "/usr/share/backgrounds/xfce/xfce-verticals.png"
 
 # Set LightDM As Default
-sudo echo "/usr/bin/lightdm" >> /etc/X11/default-display-manager
+sudo echo "/usr/sbin/lightdm" >> /etc/X11/default-display-manager
+sudo rm /etc/systemd/system/default.target
+sudo systemctl set-default graphical.target
 
 # LightDM Theme
 sudo sed -i 's/^#greeter-session=.*$/greeter-session=lightdm-webkit2-greeter/' /etc/lightdm/lightdm.conf
 sudo sed -i 's/^webkit_theme        = .*$/webkit_theme        = litarvan/' /etc/lightdm/lightdm-webkit2-greeter.conf
-
-# LightDM Service
-sudo systemctl enable lightdm.service
 
 # TEMPORARY CUSTOM FIXES
 
