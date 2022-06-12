@@ -219,8 +219,10 @@ hdparm
 
 ## Display manager
 accountsservice
-lightdm-webkit2-greeter
-lightdm-webkit-theme-litarvan
+lightdm-slick-greeter
+eos-lightdm-slick-theme
+#lightdm-webkit2-greeter
+#lightdm-webkit-theme-litarvan
 
 ## Desktop environment
 libwnck3
@@ -276,6 +278,8 @@ ttf-iosevka-nerd
 # ENDEAVOUROS REPO
 
 ## General
+arc-gtk-theme-eos
+endeavouros-theming
 eos-apps-info
 eos-hooks
 eos-log-tool
@@ -284,6 +288,7 @@ eos-quickstart
 eos-qogir-icons
 eos-rankmirrors
 eos-update-notifier
+grub2-theme-endeavouros
 nvidia-installer-dkms
 rate-mirrors
 reflector-simple
