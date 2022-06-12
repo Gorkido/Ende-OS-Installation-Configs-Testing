@@ -193,7 +193,6 @@ bluez-utils
 blueberry
 
 ## Firewall
-firewalld
 python-pyqt5
 python-capng
 
@@ -292,6 +291,7 @@ grub2-theme-endeavouros
 nvidia-installer-dkms
 rate-mirrors
 reflector-simple
+welcome
 yad-eos
 yay
 
