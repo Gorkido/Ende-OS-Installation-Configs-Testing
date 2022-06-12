@@ -96,9 +96,8 @@ ln -s "/usr/share/endeavouros/backgrounds/endeavouros-wallpaper.png" "/usr/share
 # sudo sed -i 's/^#greeter-session=.*$/greeter-session=lightdm-webkit2-greeter/' /etc/lightdm/lightdm.conf
 # sudo sed -i 's/^webkit_theme        = .*$/webkit_theme        = litarvan/' /etc/lightdm/lightdm-webkit2-greeter.conf
 
-# Enable LightDM
-sudo systemctl unmask lightdm.service
-sudo systemctl daemon-reload
+# Fix LightDM
+sudo pacman -Sy --noconfirm lightdm-slick-greeter
 
 # TEMPORARY CUSTOM FIXES
 
