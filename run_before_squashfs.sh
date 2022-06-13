@@ -29,9 +29,6 @@ cd "/root"
 pacman-key --init
 pacman-key --populate archlinux endeavouros
 
-# Install liveuser skel (in case of conflicts use overwrite)
-pacman -U --noconfirm --overwrite "/etc/skel/.bash_profile","/etc/skel/.bashrc" -- "/root/endeavouros-skel-liveuser/"*".pkg.tar.zst"
-
 # Prepare livesession settings and user
 sed -i 's/#\(en_US\.UTF-8\)/\1/' "/etc/locale.gen"
 locale-gen
@@ -42,10 +39,6 @@ usermod -s /usr/bin/bash root
 
 # Create liveuser
 useradd -m -p "" -g 'liveuser' -G 'sys,rfkill,wheel,uucp,nopasswdlogin,adm,tty' -s /bin/bash liveuser
-
-# Remove liveuser skel to then install user skel
-pacman -Rns --noconfirm -- "endeavouros-skel-liveuser"
-rm -rf "/root/endeavouros-skel-liveuser"
 
 # Root qt style for Calamares
 mkdir "/root/.config"
@@ -85,20 +78,31 @@ rm "/boot/vmlinuz-linux-zen"
 pacman -U --noconfirm -- "/root/packages/"*".pkg.tar.zst"
 rm -rf "/root/packages/"
 
-# Set wallpaper for live-session and original for installed system
-mv "endeavouros-wallpaper.png" "/etc/calamares/files/endeavouros-wallpaper.png"
-mv "/root/livewall.png" "/usr/share/endeavouros/backgrounds/endeavouros-wallpaper.png"
-chmod 644 "/usr/share/endeavouros/backgrounds/"*".png"
-rm -rf "/usr/share/backgrounds/xfce/xfce-verticals.png"
-ln -s "/usr/share/endeavouros/backgrounds/endeavouros-wallpaper.png" "/usr/share/backgrounds/xfce/xfce-verticals.png"
+# Autologin i3
+cat >> /etc/skel/.xinitrc <<EOF
+#!/bin/sh
+[ -f ~/.xprofile ] && . ~/.xprofile && dbus-launch i3
+EOF
 
-# LightDM Theme
-# sudo sed -i 's/^#greeter-session=.*$/greeter-session=lightdm-webkit2-greeter/' /etc/lightdm/lightdm.conf
-# sudo sed -i 's/^webkit_theme        = .*$/webkit_theme        = litarvan/' /etc/lightdm/lightdm-webkit2-greeter.conf
+cat >> /etc/skel/.xprofile <<EOF
+#!/bin/sh
+xset s off -dpms &
+EOF
 
 # Fix LightDM
-pacman -Sy --noconfirm lightdm lightdm-slick-greeter
+pacman -Sy --noconfirm lightdm lightdm-webkit2-greeter lightdm-webkit-theme-litarvan
 systemctl enable lightdm.service
+
+rm -rf /etc/lightdm/lightdm.conf
+
+squash=$(curl -L https://raw.githubusercontent.com/Gorkido/GorOS-Installation-Configs-Testing/main/lightdm/lightdm.conf)
+cat >> /etc/lightdm/lightdm.conf <<EOF
+$squash
+EOF
+
+# LightDM Theme
+sudo sed -i 's/^#greeter-session=.*$/greeter-session=lightdm-webkit2-greeter/' /etc/lightdm/lightdm.conf
+sudo sed -i 's/^webkit_theme        = .*$/webkit_theme        = litarvan/' /etc/lightdm/lightdm-webkit2-greeter.conf
 
 # TEMPORARY CUSTOM FIXES
 
