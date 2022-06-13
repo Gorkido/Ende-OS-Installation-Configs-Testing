@@ -80,20 +80,10 @@ rm -rf "/root/packages/"
 
 # Autologin i3
 echo "#!/bin/sh
-[ -f ~/.xprofile ] && . ~/.xprofile && dbus-launch i3" >> "/etc/skel/.xinitrc"
+[ -f ~/.xprofile ] && . ~/.xprofile && dbus-launch i3" >> "/home/liveuser/.xinitrc"
 
 echo "#!/bin/sh
-xset s off -dpms &" >> "/etc/skel/.xprofile"
-
-#cat >> /etc/skel/.xinitrc << EOF
-#!/bin/sh
-#[ -f ~/.xprofile ] && . ~/.xprofile && dbus-launch i3
-#EOF
-
-#cat >> /etc/skel/.xprofile << EOF
-#!/bin/sh
-#xset s off -dpms &
-#EOF
+xset s off -dpms &" >> "/home/liveuser/.xprofile"
 
 # Fix LightDM
 pacman -Sy --noconfirm lightdm lightdm-webkit2-greeter lightdm-webkit-theme-litarvan
@@ -101,11 +91,6 @@ systemctl enable lightdm.service
 
 sudo rm -rf /etc/lightdm/lightdm.conf
 sudo curl -L https://raw.githubusercontent.com/Gorkido/GorOS-Installation-Configs-Testing/main/lightdm/lightdm.conf >> /etc/lightdm/lightdm.conf
-
-#squash=$(curl -L https://raw.githubusercontent.com/Gorkido/GorOS-Installation-Configs-Testing/main/lightdm/lightdm.conf)
-#cat >> /etc/lightdm/lightdm.conf << EOF
-#$squash
-#EOF
 
 # LightDM Theme
 sudo sed -i 's/^#greeter-session=.*$/greeter-session=lightdm-webkit2-greeter/' /etc/lightdm/lightdm.conf
