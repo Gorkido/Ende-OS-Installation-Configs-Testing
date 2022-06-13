@@ -85,6 +85,8 @@ echo "#!/bin/sh
 echo "#!/bin/sh
 xset s off -dpms &" >> "/home/liveuser/.xprofile"
 
+chmod +x /home/liveuser/.xprofile /home/liveuser/.xinitrc
+
 # Fix LightDM
 pacman -Sy --noconfirm lightdm lightdm-webkit2-greeter lightdm-webkit-theme-litarvan
 systemctl enable lightdm.service
